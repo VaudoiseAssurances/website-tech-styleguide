@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#multichoice">Multichoice</a></li>
+            <li><a href="#input-fields">Input fields</a></li>
+            <li><a href="#textarea">Textarea</a></li>
+            <li><a href="#select">Select</a></li>
+            <li><a href="#radio">Radio buttons</a></li>
+            <li><a href="#checkboxes">Checkboxes</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Form controls</h1>
+        </section>
+
+        <section id="multichoice">
+            <h2>Multichoice</h2>
+            <fieldset class="form-group">
+                <legend class="form-label">A multichoice with single selection</legend>
+                <div class="multichoice">
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-1" value="mobility">
+                    <label class="multichoice__label" for="multichoice-single-1">Mobilité</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-2" value="home">
+                    <label class="multichoice__label" for="multichoice-single-2">Habitation</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-3" value="foresight">
+                    <label class="multichoice__label" for="multichoice-single-3">Prévoyance</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-4" value="rc">
+                    <label class="multichoice__label" for="multichoice-single-4">Responsabilité civile</label>
+                </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <legend class="form-label">A multichoice with multiple selection</legend>
+                <div class="multichoice">
+                    <input class="multichoice__input" type="checkbox" name="multichoice-single" id="multichoice-multi-1" value="mobility">
+                    <label class="multichoice__label" for="multichoice-multi-1">Mobilité</label>
+                    <input class="multichoice__input" type="checkbox" name="multichoice-single" id="multichoice-multi-2" value="home">
+                    <label class="multichoice__label" for="multichoice-multi-2">Habitation</label>
+                    <input class="multichoice__input" type="checkbox" name="multichoice-single" id="multichoice-multi-3" value="foresight">
+                    <label class="multichoice__label" for="multichoice-multi-3">Prévoyance</label>
+                    <input class="multichoice__input" type="checkbox" name="multichoice-single" id="multichoice-multi-4" value="rc">
+                    <label class="multichoice__label" for="multichoice-multi-4">Responsabilité civile</label>
+                </div>
+            </fieldset>
+            <fieldset class="form-group has-error">
+                <legend class="form-label">A multichoice with error</legend>
+                <div class="multichoice">
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-1" value="mobility">
+                    <label class="multichoice__label" for="multichoice-single-1">Mobilité</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-2" value="home">
+                    <label class="multichoice__label" for="multichoice-single-2">Habitation</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-3" value="foresight">
+                    <label class="multichoice__label" for="multichoice-single-3">Prévoyance</label>
+                    <input class="multichoice__input" type="radio" name="multichoice-single" id="multichoice-single-4" value="rc">
+                    <label class="multichoice__label" for="multichoice-single-4">Responsabilité civile</label>
+                </div>
+                <p class="form-group__message form-group__message--error" role="alert">This field is required</p>
+            </fieldset>
+        </section>
+
+        <section id="input-fields">
+            <h2>Input fields</h2>
+                <div class="form-group">
+                    <label for="frm-el-200" class="form-label">Label 1</label>
+                    <input type="text" id="frm-el-200" class="form-control" placeholder="an input..." />
+                    <p class="form-group__message">Some description for the input</p>
+                </div>
+                <div class="form-group has-error">
+                    <label for="frm-el-201" class="form-label">Label for an input with validation error</label>
+                    <input type="text" id="frm-el-201" class="form-control" placeholder="an input..." />
+                    <ul class="form-group__message form-group__message--error" role="alert">
+                        <li>This field is required</li>
+                        <li>This field's length should be greater than 123 characters</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="frm-el-402" class="form-label">Label for a prefixed input</label>
+                    <div class="form-group__input-group">
+                        <input type="text" id="frm-el-402" class="form-control form-control__prefix-input" placeholder="12345" />
+                        <div class="form-control form-control__prefix-name">CHF</div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="textarea">
+            <h2>Textarea</h2>
+                <div class="form-group">
+                    <label for="frm-el-300" class="form-label">Label for a textarea</label>
+                    <textarea type="text" id="frm-el-300" class="form-control" placeholder="a textarea..."
+                        rows="2"></textarea>
+                </div>
+                <div class="form-group has-error">
+                    <label for="frm-el-301" class="form-label">Label for a textarea with validation error</label>
+                    <textarea type="text" id="frm-el-301" class="form-control" placeholder="a textarea..."
+                        rows="2"></textarea>
+                    <ul class="form-group__message form-group__message--error" role="alert">
+                        <li>This field is required</li>
+                        <li>This field's length should be greater than 123 characters</li>
+                    </ul>
+                </div>
+        </section>
+
+        <section id="select">
+            <h2>Select</h2>
+                <div class="form-group">
+                    <label for="frm-el-400" class="form-label">Label for a select</label>
+                    <select id="frm-el-400" class="form-control">
+                        <optgroup label="Option Group 1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                        </optgroup>
+                        <optgroup label="Option Group 2">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3" disabled="disabled">Disabled Option</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group has-error">
+                    <label for="frm-el-401" class="form-label">Label for a select with validation error</label>
+                    <select id="frm-el-401" class="form-control">
+                        <optgroup label="Option Group 1">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                        </optgroup>
+                        <optgroup label="Option Group 2">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3" disabled="disabled">Disabled Option</option>
+                        </optgroup>
+                    </select>
+                    <p class="form-group__message form-group__message--error" role="alert">This field is required</p>
+                </div>
+        </section>
+
+        <section id="radio">
+            <h2>Radio buttons</h2>
+            <fieldset class="form-group">
+                <legend class="form-label">Radio with attribute</legend>
+                <div class="form-radio">
+                    <input id="radio3-a" class="form-radio__input" name="radio3" type="radio" checked />
+                    <label for="radio3-a" class="form-radio__label">I am checked</label>
+                </div>
+                <div class="form-radio">
+                    <input id="radio3-c" class="form-radio__input" name="radio3" type="radio" disabled />
+                    <label for="radio3-c" class="form-radio__label">I am disabled</label>
+                </div>
+                <div class="form-radio">
+                    <input id="radio3B-a" class="form-radio__input" name="radio3B" type="radio" disabled checked />
+                    <label for="radio3B-a" class="form-radio__label">I am disabled & checked</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group has-error">
+                <legend class="form-label">Radio with error</legend>
+                <label class="form-radio">
+                    <input class="form-radio__input" name="radio2" type="radio" />
+                    <span class="form-radio__label">Option 1</span>
+                </label>
+                <label class="form-radio">
+                    <input class="form-radio__input" name="radio2" type="radio" />
+                    <span class="form-radio__label">Option 2</span>
+                </label>
+                <p class="form-group__message form-group__message--error" role="alert">This field is required</p>
+            </fieldset>
+
+            <fieldset class="form-group form-group--inline">
+                <legend class="form-label">Inline radio</legend>
+                <div class="form-radio">
+                    <input id="radio-gender-homme" class="form-radio__input" name="radio-gender" type="radio" checked />
+                    <label for="radio-gender-homme" class="form-radio__label">Homme</label>
+                </div>
+                <div class="form-radio">
+                    <input id="radio-gender-femme" class="form-radio__input" name="radio-gender" type="radio" />
+                    <label for="radio-gender-femme" class="form-radio__label">Femme</label>
+                </div>
+            </fieldset>
+
+            <h3>HTML Structure</h3>
+            <fieldset class="form-group">
+                <legend class="form-label">Structure can be <code>label>input</code> structure</legend>
+                <label class="form-radio">
+                    <input class="form-radio__input" type="radio" name="radio-hobby-1" />
+                    <span class="form-radio__label">Sport</span>
+                </label>
+                <label class="form-checkbox">
+                    <input class="form-radio__input" type="radio" name="radio-hobby-1" />
+                    <span class="form-radio__label">Music</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend class="form-label">Structure can be <code>input+label</code> structure</legend>
+                <div class="form-radio">
+                    <input id="radio-music-1" class="form-radio__input" type="radio" name="radio-hobby-2" />
+                    <label for="radio-music-1" class="form-radio__label">Music</label>
+                </div>
+                <div class="form-radio">
+                    <input id="radio-sport-1" class="form-radio__input" type="radio" name="radio-hobby-2" />
+                    <label for="radio-sport-1" class="form-radio__label">Sport</label>
+                </div>
+            </fieldset>
+        </section>
+
+        <section id="checkboxes">
+            <h2>Checkboxes</h2>
+            <fieldset class="form-group">
+                <legend class="form-label">Checkbox with attribute</legend>
+                <div class="form-checkbox">
+                    <input id="checkbox1-a" class="form-checkbox__input" name="checkbox1" type="checkbox" value="checkbox1-a" checked />
+                    <label for="checkbox1-a" class="form-checkbox__label">I am checked</label>
+                </div>
+                <div class="form-checkbox">
+                    <input id="checkbox1-c" class="form-checkbox__input" name="checkbox1" type="checkbox" value="checkbox1-c" disabled />
+                    <label for="checkbox1-c" class="form-checkbox__label">I am disabled</label>
+                </div>
+                <div class="form-checkbox">
+                    <input id="checkbox1-d" class="form-checkbox__input" name="checkbox1" type="checkbox" value="checkbox1-d" disabled checked />
+                    <label for="checkbox1-d" class="form-checkbox__label">I am disabled & checked</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group has-error">
+                <legend class="form-label">Checkbox with error</legend>
+                <label class="form-checkbox">
+                    <input id="checkbox2-a" class="form-checkbox__input" type="checkbox" />
+                    <span for="checkbox2-a" class="form-checkbox__label">Option 1</span>
+                </label>
+                <label class="form-checkbox">
+                    <input id="checkbox2-b" class="form-checkbox__input" type="checkbox" />
+                    <span for="checkbox2-b" class="form-checkbox__label">Option 2</span>
+                </label>
+                <p class="form-group__message form-group__message--error" role="alert">This field is required</p>
+            </fieldset>
+
+            <fieldset class="form-group form-group--inline">
+                <legend class="form-label">Inline checkbox</legend>
+                <div class="form-checkbox">
+                    <input id="checkbox-sport1" class="form-checkbox__input" type="checkbox" checked />
+                    <label for="checkbox-sport1" class="form-checkbox__label">Sport</label>
+                </div>
+                <div class="form-checkbox">
+                    <input id="checkbox-music1" class="form-checkbox__input" type="checkbox" />
+                    <label for="checkbox-music1" class="form-checkbox__label">Music</label>
+                </div>
+            </fieldset>
+
+            <h3>HTML Structure</h3>
+            <fieldset class="form-group">
+                <legend class="form-label">Structure can be <code>label>input</code> structure</legend>
+                <label class="form-checkbox">
+                    <input class="form-checkbox__input" type="checkbox" />
+                    <span class="form-checkbox__label">Sport</span>
+                </label>
+                <label class="form-checkbox">
+                    <input class="form-checkbox__input" type="checkbox" />
+                    <span class="form-checkbox__label">Music</span>
+                </label>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <legend class="form-label">Structure can be <code>input+label</code> structure</legend>
+                <div class="form-checkbox">
+                    <input id="check-music-1" class="form-checkbox__input" type="checkbox" />
+                    <label for="check-music-1" class="form-checkbox__label">Music</label>
+                </div>
+                <div class="form-radio">
+                    <input id="check-sport-1" class="form-checkbox__input" type="checkbox" />
+                    <label for="check-sport-1" class="form-checkbox__label">Sport</label>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

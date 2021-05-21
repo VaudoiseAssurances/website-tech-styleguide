@@ -1,0 +1,49 @@
+/** Only for the styleguide base layout. Should not affect elements of the showroom **/
+
+.styleguide-content {
+    margin-left: 220px;
+}
+
+.styleguide-nav {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 220px;
+    border-right: 1px solid black;
+    padding-bottom: 1em;
+    overflow: auto;
+}
+
+.styleguide-nav h1 {
+    padding: 1em;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.styleguide-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.styleguide-nav a {
+    display: block;
+    padding: 1em;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.styleguide-nav a:hover,
+.styleguide-nav a:focus {
+    background-color: green;
+    color: white;
+}
+
+.styleguide-content>section {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+}

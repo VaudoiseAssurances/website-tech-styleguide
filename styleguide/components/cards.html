@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#basic-card">Basic card</a></li>
+            <li><a href="#news-card">News card</a></li>
+            <li><a href="#product-card">Product card</a></li>
+            <li><a href="#product-cards-grid">Product cards grid</a></li>
+            <li><a href="#coverage-card">Coverage card</a></li>
+            <li><a href="#coverage-cards-grid">Coverage cards grid</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Cards</h1>
+        </section>
+
+        <section id="basic-card">
+            <h2>Basic card <span style="font-size: 0.6em;">(wrap in a 500px container)</span></h2>
+            <div style="width:500px">
+                <div class="card">
+                    <header class="card__header">
+                        <h1 class="card__title">This is normal card</h1>
+                    </header>
+                    <div class="card__body">
+                        <p class="card__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe facilis
+                            voluptatem ipsa assumenda quis nulla. Voluptas a vel dolores tenetur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="news-card">
+            <div class="card card--news">
+                <header class="card__header">
+                    <span class="card__category">Actualité</span>
+                    <h1 class="card__title card__title--big">Coronavirus : toutes les réponses à vos questions.</h1>
+                </header>
+                <div class="card__body">
+                    <i class="card__icon va-icon va-icon-information-circle"></i>
+                    <p class="card__text">
+                        Retrouvez toutes les informations relatives aux couvertures d'assurance en
+                        lien avec le coronavirus.
+                    </p><a class="card__link with-arrow" href="#">Lire l'article</a>
+                </div>
+                <footer class="card__footer">
+                    <button class="btn btn--full-width">Voir toute l'actualité</button>
+                </footer>
+            </div>
+        </section>
+        <section id="product-cards">
+            <section id="product-card">
+                <h2>Product card</h2>
+                <a class="card card--link card--product" href="#product-card">
+                    <div>
+                        <i class="card__icon va-icon va-icon-car"></i>
+                    </div>
+                    <div>
+                        <h1 class="card__title">Product card</h1>
+                        <p class="card__text">
+                            Lorem ipsum dolor sit amet consectetur dolor adiposicing elit sed do eiusmod tempor.
+                        </p>
+                    </div>
+                </a>
+                <br>
+                <a class="card card--link card--product is-active" href="#product-card">
+                    <div>
+                        <i class="card__icon va-icon va-icon-car"></i>
+                    </div>
+                    <div>
+                        <h1 class="card__title">Product card SELECTED</h1>
+                        <p class="card__text">
+                            Lorem ipsum dolor sit amet consectetur dolor adiposicing elit sed do eiusmod tempor.
+                        </p>
+                    </div>
+                </a>
+            </section>
+            <section id="product-cards-grid">
+                <h2>Product cards grid</h2>
+                <div class="card-grid dynamic-custom-border-grid">
+                    <div class="row no-gutters">
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 card-grid__item">
+                            <div class="custom-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="coverage-cards">
+            <section id="coverage-card">
+                <h2>Coverage card</h2>
+                <div class="card card--coverage">
+                    <h1 class="card__title">This is a coverage card</h1>
+                    <div class="card__body">
+                        <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit dignissim sodales ut eu sem. Consectetur libero id faucibus nisl tincidunt eget.</p>
+                    </div>
+                    <i class="card__icon va-icon va-icon-checkmark-circle"></i>
+                </div>
+            </section>
+            <section id="coverage-cards-grid">
+                <h2>Coverage cards grid</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-3"></div>
+                        <div class="col-md-6 col-lg-4 mb-3"></div>
+                        <div class="col-md-6 col-lg-4 mb-3"></div>
+                        <div class="col-md-6 col-lg-4 mb-3"></div>
+                        <div class="col-md-6 col-lg-4 mb-3"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <script type="text/javascript">
+            var productCard = document.querySelector('.card--product');
+            var gridItems = document.querySelectorAll('.custom-border');
+
+            for (var i = 0; i < gridItems.length; ++i) {
+                gridItems[i].appendChild(productCard.cloneNode(true));
+            }
+
+            // clone coverage card to coverage cards grid
+            var coverageCard = document.querySelector('.card--coverage');
+            var coverageCardsGridItems = document.getElementById('coverage-cards-grid').querySelectorAll('div.row > *');
+
+            for(var index=0; index < coverageCardsGridItems.length; index++){
+                coverageCardsGridItems[index].appendChild(coverageCard.cloneNode(true));
+            }
+        </script>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

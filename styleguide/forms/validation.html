@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#live-validation-form">Live validation example</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Forms</h1>
+        </section>
+
+        <section id="live-validation-form">
+            <h2>Live validation example</h2>
+            <form action="get" data-isajax="true" class="js-form" name="live-validation" novalidate>
+                <div class="form-group">
+                    <label for="frm-el-1001" class="form-label">A text</label>
+                    <input type="text" id="frm-el-1001" name="frm-el-1001" class="form-control" data-val-minlength="2"
+                        data-val="true" data-val-required="Ce champ est obligatoire." placeholder="write something" />
+                </div>
+                <div class="form-group">
+                    <label for="frm-el-1002" class="form-label">A number</label>
+                    <input type="number" id="frm-el-1002" name="frm-el-1002" class="form-control" min="10" max="20"
+                        data-val="true" data-val-required="Ce champ est obligatoire." placeholder="a value between 10 and 20..." />
+                </div>
+                <div class="form-group">
+                    <label for="frm-el-1003" class="form-label">An email</label>
+                    <input type="email" id="frm-el-1003" name="frm-el-1003" data-val data-val-email="Please enter a valid email" class="form-control" placeholder="you@example.org" />
+                </div>
+                <div class="form-group">
+                    <label for="frm-el-1004" class="form-label">A date</label>
+                    <input type="text" name="frm-el-1004" id="frm-el-1004" class="form-control"
+                        data-val="true"
+                        data-val-date="Le champ 'Date de naissance' n'est pas une date valide."
+                        data-val-datetimerangevalidation="Le champ 'Date de naissance' doit être compris entre 01.01.1920 et 16.03.2021."
+                        data-val-datetimerangevalidation-dateformat="dd.MM.yyyy"
+                        data-val-datetimerangevalidation-maxdatetime="16.03.2021"
+                        data-val-datetimerangevalidation-mindatetime="01.01.1920"
+                        data-val-required="Le champ 'Date de naissance' est requis.">
+                </div>
+                <fieldset class="form-group form-group--inline">
+                    <legend class="form-label">Gender</legend>
+                    <div class="form-radio">
+                        <input id="frm-el-1006" name="live-validation-gender" class="form-radio__input" type="radio"
+                            value="homme" />
+                        <label for="frm-el-1006" class="form-radio__label">Homme</label>
+                    </div>
+                    <div class="form-radio">
+                        <input id="frm-el-1007" name="live-validation-gender" class="form-radio__input" type="radio"
+                            value="femme" data-val="true" data-val-required="Le champ 'Gender' est requis." />
+                        <label for="frm-el-1007" class="form-radio__label">Femme</label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend class="form-label">Choisissez une option</legend>
+                    <div class="multichoice">
+                        <input class="multichoice__input" type="radio" name="multichoice-live-validation" id="multichoice-live-validation-1" value="mobility" data-val="true" data-val-required="Veuillez sélectionner une valeur.">
+                        <label class="multichoice__label" for="multichoice-live-validation-1">Mobilité</label>
+                        <input class="multichoice__input" type="radio" name="multichoice-live-validation" id="multichoice-live-validation-2" value="home" data-val="true" data-val-required="Veuillez sélectionner une valeur.">
+                        <label class="multichoice__label" for="multichoice-live-validation-2">Habitation</label>
+                        <input class="multichoice__input" type="radio" name="multichoice-live-validation" id="multichoice-live-validation-3" value="foresight" data-val="true" data-val-required="Veuillez sélectionner une valeur.">
+                        <label class="multichoice__label" for="multichoice-live-validation-3">Prévoyance</label>
+                        <input class="multichoice__input" type="radio" name="multichoice-live-validation" id="multichoice-live-validation-4" value="rc" data-val="true" data-val-required="Veuillez sélectionner une valeur.">
+                        <label class="multichoice__label" for="multichoice-live-validation-4">Responsabilité civile</label>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <label for="frm-el-1008" class="form-label">A textarea</label>
+                    <textarea id="frm-el-1008" name="frm-el-1008" data-val data-val-required="This field is required" class="form-control"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn--primary">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+
+<body>
+    <!-- <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <ul>
+            <li><a href="#basic">Basic dropdown</a>
+            <li><a href="#language">Language selector</a>
+            <li><a href="#news-card">News card</a>
+            <li><a href="#product-card">Product card</a>
+            <li><a href="#card-grid">Card grid</a>
+        </ul>
+    </aside>
+    <main class="styleguide-content"> -->
+    <section class="mb-3">
+        <h1>Hero</h1>
+        <a href="/index.html" class="link--primary with-arrow">Back home</a>
+    </section>
+
+    <section id="header" class="mb-6">
+        <div class="hero hero--header">
+            <div class="ratio ratio--hero-header js-ratio-shadow">
+                <img class="ratio__item hero__image" src="https://picsum.photos/2400/1100" alt=""/>
+            </div>
+            <div class="hero__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <h1 class="hero__title">I am a HERO HEADER</h1>
+                            <p class="hero__description">I am a simple paragraph also in a hero content that can be <b>customised</b> as you want and also be as long as you want. I will just be <a class="link--primary" herf="#">white by default</a> with a <b>text-shadow</b> so you can read me easily.</p>
+                            <button class="hero__action btn">CLIck me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    I ma a col 12 in a row in a container
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="header" class="mb-6">
+        <div class="hero hero--header">
+            <div class="ratio ratio--hero-header js-ratio-shadow">
+                <video class="ratio__item hero__video" muted="" autoplay loop>
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <h1 class="hero__title">I am a HERO HEADER with Video</h1>
+                            <p class="hero__description">I am a simple paragraph also in a hero content that can be <b>customised</b> as you want and also be as long as you want. I will just be <a class="link--primary" herf="#">white by default</a> with a <b>text-shadow</b> so you can read me easily.</p>
+                            <button class="hero__action btn">CLIck me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="mb-6">
+        <div class="container">
+            <div class="hero hero--news">
+                <div class="ratio ratio--hero-news js-ratio-shadow">
+                    <img class="ratio__item hero__image" src="https://picsum.photos/1700/1000" alt=""/>
+                </div>
+                <div class="hero__content">
+                    <h2 class="hero__pretitle">I am a content--news</h2>
+                    <h1 class="hero__title">La Vaudoise co-investit dans un fonds d’infrastructure lié à la transition énergétique</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parralax" class="mb-6">
+        <div class="hero hero--parallax">
+            <div class="hero__image hero__image--shadow" data-hero-image="https://picsum.photos/2200/1000"></div>
+            <div class="hero__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <h1 class="hero__title">Une police d'assurance composée pour vous</h1>
+                            <p class="hero__description">I am a simple paragraph also in a hero content that can be <b>customised</b> as you want and also be as long as you want. I will just be <a class="link--primary" herf="#">white by default</a> with a <b>text-shadow</b> so you can read me easily.</p>
+                            <div js-hero-actions>
+                                <button class="hero__action btn btn--secondary"><i class="va-icon va-icon-calculator mr-2"></i> Je calcule ma prime</button>
+                                <button class="hero__action btn btn--tertiary">En savoir plus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="default" class="mb-6">
+        <div class="hero">
+            <div class="ratio js-ratio-shadow">
+                <img class="ratio__item hero__image" src="https://picsum.photos/2700/800" alt=""/>
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title">I am a hero title but i could be a .h1 or .h2</h1>
+                <h2>The hero img has a ratio--16-9 and the img width is only 800px</h2>
+                <h3 class="h2">It is <b>highly</b> recommended to use <b>.ratio</b> for good ratio... But the hero block will <b>directly have the final height</b> while the img is loading !!! It prevents the under contents to move</h3 class="h2">
+                <p class="hero__description">I am a simple paragraph also in a hero content that can be <b>customised</b> as you want and also be as long as you want. I will just be <a class="link--primary" herf="#">white by default</a> with a <b>text-shadow</b> so you can read me easily.</p>
+                <button class="hero__action btn">CLIck me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- </main> -->
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

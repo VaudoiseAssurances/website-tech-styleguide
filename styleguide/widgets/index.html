@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>        
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#life-calculator">Life calculator</a></li>
+            <li><a href="#product-benefit">Product benefit</a></li>
+            <li><a href="#product-advantage">Product advantages</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <h1 class="ml-3">Widgets</h1>
+
+        <section id="life-calculator">
+            <h1 class="h2">Life calculator</h1>
+            <div class="banner banner--grey">
+                <va-flip id="life-calculator-flip-panel" class="d-block ml-5 mr-5">
+                    <section slot="recto" class="p-4" style="background-color: white;">
+                        <h1 class="h3">Calculateur de votre prime d'assurance décès</h1>
+                        <form method="POST" action="https://vaudoise.free.beeceptor.com/calculator" data-isajax="true"
+                            class="js-form" name="lifeCalculator">
+                            <fieldset class="form-group form-group--inline">
+                                <legend class="form-label">Vous êtes</legend>
+                                <div class="form-radio form-radio--inline">
+                                    <input id="life-calc-homme" class="form-radio__input" name="life-calc-gender" type="radio" checked />
+                                    <label for="life-calc-homme" class="form-radio__label">Homme</span>
+                                </div>
+                                <div class="form-radio form-radio--inline">
+                                    <input id="life-calc-femme" class="form-radio__input" name="life-calc-gender" type="radio" />
+                                    <label for="life-calc-femme" class="form-radio__label">Femme</span>
+                                </div>
+                            </fieldset>
+                            <div class="form-group">
+                                <label for="life-calc-birthyear" class="form-label">Année de naissance</label>
+                                <input type="number" id="life-calc-birthyear" class="form-control" name="life-calc-birthyear" maxlength="4"
+                                    minlength="4" value="1900" />
+                            </div>
+                            <fieldset class="form-group form-group--inline">
+                                <legend class="form-label">Vous êtes</legend>
+                                <div class="form-radio">
+                                    <input id="life-calc-nfum" class="form-radio__input" name="life-calc-fum" type="radio" />
+                                    <label for="life-calc-nfum" class="form-radio__label">Non-fumeur<i class="ml-1 va-icon va-icon-information-circle-o"></i></label>
+                                </div>
+                                <div class="form-radio">
+                                    <input id="life-calc-fum" class="form-radio__input" name="life-calc-fum" type="radio" />
+                                    <label for="life-calc-fum" class="form-radio__label">Fumeur<i class="ml-1 va-icon va-icon-information-circle-o"></i></label>
+                                </div>
+                            </fieldset>
+                            <div class="form-group">
+                                <label for="life-calc-death-capital" class="form-label">Montant du capital décès assuré</label>
+                                <input type="number" id="life-calc-death-capital" class="form-control" name="life-calc-birthyear" max="500000"
+                                minlength="1" value="250000" />
+                                <va-slider class="form-slider" value="250000" max="500000" tabindex="-1"></va-slider>
+                            </div>
+                            <div class="form-group">
+                                <label for="life-calc-insurance-duration" class="form-label">Durée de l'assurance (jusqu'à l'âge de l'AVS)</label>
+                                <input type="number" id="life-calc-insurance-duration" class="form-control" name="life-calc-birthyear" maxlength="4"
+                                minlength="4" value="45" />
+                                <va-slider class="form-slider" value="45" max="65" tabindex="-1"></va-slider>
+                            </div>
+                            <div>
+                                <va-button id="life-calculator-submit-btn" btn-class="btn btn--primary with-arrow" type="submit" text="Calculer"></va-button>
+                            </div>
+                        </form>
+                    </section>
+                    <section slot="verso" style="background-color: white" class="p-4 hidden">
+                        <h1 class="h3">Prime d'assurance</h1>
+                        <p>Coût annuel total : CHF <span id="life-calculator-premium-yearly">-</span></p>
+                        <p>Prime mensuelle : CHF <span id="life-calculator-premium-monthly">-</span></p>
+                        <p>Payable annuellement, semestriellement ou trimestriellement.</p>
+                        <div class="form-group">
+                            <a href="#" class="btn btn--primary with-arrow">Demander un conseil personnalisé</a>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn--secondary"
+                                onclick="javascript:document.getElementById('life-calculator-flip-panel').flip();document.getElementById('life-calculator-submit-btn').toggleLoadingState(false);">Retour</button>
+                        </div>
+                    </section>
+                </va-flip>
+            </div>
+        </section>
+
+        <section id="product-benefit">
+            <h1 class="h2">Product benefit</h1>
+            <div class="banner banner--grey">
+                <section class="product-benefit">
+                    <a href="#" class="product-benefit__image-link">
+                        <img class="product-benefit__image" src="/styleguide/images/pink-pig.jpg" alt="Benefit image">
+                    </a>
+                    <div class="product-benefit__details">
+                        <h1 class="product-benefit__title">
+                            Bonus maximale à vie
+                        </h1>
+                        <p class="product-benefit__description">
+                            Avec la protection du bonus, prime minimale garantie à vie si le client bénéficie d'un bonus
+                            maximum depuis 2 ans à la Vaudoise.
+                        </p>
+                        <a href="#" class="product-benefit__link link--primary with-arrow">Voir la video</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section id="product-advantage">
+            <section class="container">
+                <div class="row">
+                    <header class="col-12">
+                        <h1 class="h1 product-title">Vos avantages</h1>
+                    </header>
+
+                    <div class="d-lg-none d-xl-none">
+                        <va-accordion-item title="Des couvertures innovantes" isExpanded>
+                            <ul>
+                                <li>Une indémnisation a 100% durant les 24 premiers mois suivant la premiére mise en
+                                    circulation en cas de dommage total</li>
+                                <li>Une couverture en cas de vol, tentative de vol ou de collision par suite de Car
+                                    hacking</li>
+                                <li>Une couverture Casco collision qui couvre les dégats de parc. Pas de perte de
+                                    bonus si aucune faute ne vous est imputable.</li>
+                                <li>Une couverture des dommages matériels causés par le preneur d’assurance lors
+                                    d'une collision avec un véhicule d'un membre de sa famille</li>
+                            </ul>
+                        </va-accordion-item>
+                        <va-accordion-item title="Des conditions avantageuses">
+                            <ul>
+                                <li>Un bonus maximal a vie (si vous étes affilié à la Vaudoise depuis plus de deux ans
+                                    au niveau de bonus le plus bas et que vous avez choisi l’option de protection du
+                                    bonus)</li>
+                                <li>Des primes attractives pour les véhicules respectueux de l'environnement</li>
+                                <li>Une réduction sur votre prime moto si votre voiture est assurée a la Vaudoise</li>
+                                <li>Unrabais substantiet pour vos enfants et petits-enfants, pour que toute la famille
+                                    profite d'une assurance de bonne qualité</li>
+                                <li>Aucune franchise supplémentaire pour les jeunes et les nouveaux conducteurs inscrits
+                                    dans le contrat</li>
+                                <li>Une assurance annulation de voyage offerte si vous disposez de I'assurance Occupants
+                                    dans votre contrat</li>
+                                <li>La redistribution d'une partie des bénéfices aux clients grace a nos origines
+                                    mutualistes</li>
+                            </ul>
+                        </va-accordion-item>
+                        <va-accordion-item title="Des services pour vous faciliter la vie">
+                            <ul>
+                                <li>Assistance 24/24 en cas de panne et d'accidents</li>
+                                <li>Suivez en temps réel votre dépannage avec rapplication Vaudoise Assistance</li>
+                                <li>Ligne juridique : nos clients bénéficient gratuitement d'un conseil juridique au
+                                    0800 812912</li>
+                                <li>Juris Help : suite a un accident de la circulation ou en cas d'infraction aux régles
+                                    de la circulation, nous prenons défense lors de procédures pénales déposées a votre
+                                </li>
+                                <li>Réparation du pare-brise : intervention rapide par notre partenaire Carglass, au
+                                    domicile du client ou a son lieu de travail, et une économie de CHF 200.- sur la
+                                    franchise</li>
+                            </ul>
+                        </va-accordion-item>
+                    </div>
+
+                    <div class="row d-none d-lg-flex" aria-hidden="true">
+                        <section class="col-3 mr-5">
+                            <h1 class="h2">Des couvertures innovantes</h1>
+                            <ul class="product-list">
+                                <li class="product-list__item">Une indémnisation a 100% durant les 24 premiers mois
+                                    suivant la premiére
+                                    mise en circulation en cas de dommage total
+                                </li>
+                                <li class="product-list__item">Une couverture en cas de vol, tentative de vol ou de
+                                    collision par suite de
+                                    Car hacking
+                                </li>
+                                <li class="product-list__item">Une couverture Casco collision qui couvre les dégats de
+                                    parc. Pas de perte
+                                    de bonus si aucune faute ne vous est imputable.
+                                </li>
+                                <li class="product-list__item">Une couverture des dommages matériels causés par le
+                                    preneur d’assurance
+                                    lors d'une collision avec un véhicule d'un membre de sa famille
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="col-3 mr-5">
+                            <h1 class="h2">Des conditions avantageuses</h1>
+                            <ul class="product-list">
+                                <li class="product-list__item">
+                                    Un bonus maximal a vie (si vous étes affilié à la Vaudoise depuis plus de
+                                    deux ans au niveau de bonus le plus bas et que vous avez choisi l’option de
+                                    protection du bonus)
+                                </li>
+                                <li class="product-list__item">
+                                    Des primes attractives pour les véhicules respectueux de l'environnement
+                                </li>
+                                <li class="product-list__item">
+                                    Une réduction sur votre prime moto si votre voiture est assurée a la
+                                    Vaudoise
+                                </li>
+                                <li class="product-list__item">
+                                    Unrabais substantiet pour vos enfants et petits-enfants, pour que toute la
+                                    famille profite d'une assurance de bonne qualité
+                                </li>
+                                <li class="product-list__item">
+                                    Aucune franchise supplémentaire pour les jeunes et les nouveaux conducteurs
+                                    inscrits dans le contrat
+                                </li>
+                                <li class="product-list__item">
+                                    Une assurance annulation de voyage offerte si vous disposez de I'assurance
+                                    Occupants dans votre contrat
+                                </li>
+                                <li class="product-list__item">
+                                    La redistribution d'une partie des bénéfices aux clients grace a nos
+                                    origines mutualistes
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="col-3 mr-5">
+                            <h1 class="h2">Des services pour vous faciliter la vie</h1>
+                            <ul class="product-list">
+                                <li class="product-list__item">
+                                    Assistance 24/24 en cas de panne et d'accidents
+                                </li>
+                                <li class="product-list__item">
+                                    Suivez en temps réel votre dépannage avec rapplication Vaudoise Assistance
+                                </li>
+                                <li class="product-list__item">
+                                    Ligne juridique : nos clients bénéficient gratuitement d'un conseil
+                                    juridique au 0800 812912
+                                </li>
+                                <li class="product-list__item">
+                                    Juris Help : suite a un accident de la circulation ou en cas d'infraction
+                                    aux régles de la circulation, nous prenons défense lors de procédures pénales
+                                    déposées a votre
+                                </li>
+                                <li class="product-list__item">
+                                    Réparation du pare-brise : intervention rapide par notre partenaire
+                                    Carglass, au domicile du client ou a son lieu de travail, et une économie de CHF
+                                    200.- sur la franchise
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

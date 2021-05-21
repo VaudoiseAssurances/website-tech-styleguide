@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+    <body>
+        <aside class="styleguide-nav">
+            <h1>Categories</h1>
+            <a href="/index.html" class="link--primary">Back home</a>
+            <ul>
+                <li><a href="#basic">Basic search bar</a></li>
+                <li><a href="#small">Small search bar</a></li>
+                <li><a href="#full-width">Full width search bar</a></li>
+                <li><a href="#toggle">Toggleable search bar</a></li>
+                <li><a href="#toggle--full-width-search">Toggleable full width</a></li>
+            </ul>
+        </aside>
+        <main class="styleguide-content">
+            <section>
+                <h1>Search bars</h1>
+            </section>
+            <section id="basic" class="banner">
+                <h1>Basic search bar</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <form class="simple-form-group search-bar">
+                                <label for="basic-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="basic-search" id="basic-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="small" class="banner">
+                <h1>Small search bar</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <form class="simple-form-group search-bar search-bar--sm">
+                                <label for="small-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="small-search" id="small-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="full-width" class="banner">
+                <h1>Full width search bar</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <form class="simple-form-group search-bar search-bar--full-width">
+                                <label for="full-width-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="full-width-search" id="full-width-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="toggle" class="banner">
+                <h1>Toggleable search bar</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <form class="simple-form-group search-bar search-bar--toggleable">
+                                <label for="toggle-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="toggle-search" id="toggle-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="toggle--full-width" class="banner">
+                <h1>Toggleable search bar</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <form class="simple-form-group search-bar search-bar--full-width search-bar--toggleable">
+                                <label for="toggle--full-width-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="toggle--full-width-search" id="toggle--full-width-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <form class="simple-form-group search-bar search-bar--full-width search-bar--toggleable">
+                                <label for="large--toggle--full-width-search" class="search-bar__btn">
+                                    <input class="simple-form-control search-bar__input" placeholder="Placeholder text" type="text" name="large--toggle--full-width-search" id="large--toggle--full-width-search" aria-label="Search criteria">
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="../../src/node_modules/googlemaps-js-api-stub/stub.js"></script>
+        <script src="/scripts/va.cms.bundle.js"></script>
+    </body>
+</html>

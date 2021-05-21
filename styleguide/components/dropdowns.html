@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#basic">Basic dropdown</a></li>
+            <li><a href="#language">Language selector</a></li>
+            <li><a href="#news-card">News card</a></li>
+            <li><a href="#product-card">Product card</a></li>
+            <li><a href="#card-grid">Card grid</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Dropdowns</h1>
+        </section>
+
+        <section id="basic">
+            <div class="dropdown">
+                <button type="button" class="dropdown__toggle js-dropdown-toggle" aria-haspopup="true"
+                    aria-controls="showcase-menu" aria-label="Showcase dropdown menu">
+                    OPT1
+                    <i class="va-icon va-icon-top-page"></i>
+                </button>
+                <ul id="showcase-menu" class="dropdown__content" aria-expanded="false" role="menu">
+                    <li class="dropdown__item" role="menuitem">
+                        <a href="#dropdowns" class="dropdown__link">OPT2</a>
+                    </li>
+                    <li class="dropdown__item" role="menuitem">
+                        <a href="#dropdowns" class="dropdown__link">OPT3</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

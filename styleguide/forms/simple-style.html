@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#simple-forms">Simple form style</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Simple style form controls</h1>
+        </section>
+
+        <section id="simple-forms">
+            <form onsubmit="() => false">
+                <h2>Simple form style</h2>
+                <div class="simple-form-group">
+                    <label for="frm-el-100">Trouvez mon agence</label>
+                    <input type="text" id="frm-el-100" class="simple-form-control"
+                        placeholder="Saisir votre ville ou NPA">
+                </div>
+                <div class="simple-form-group has-error">
+                    <label for="frm-el-101">label 1</label>
+                    <input type="text" id="frm-el-101" class="simple-form-control">
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

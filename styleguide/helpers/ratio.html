@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#all">All ratio</a></li>
+            <li><a href="#video">Ratio on video</a></li>
+            <li><a href="#picture">Ratio on picture</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Ratio</h1>
+        </section>
+
+        <section id="all">
+            <div style="max-width: 2000px;">
+                <div style="display: block; width:300px;">
+                    <h2>Image with no ratio</h2>
+                    <img src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg" alt=""/>
+                </div>
+
+                <div style="display: inline-block; width:300px;">
+                    <h2>Default ratio is 4/3</h2>
+                    <div class="ratio">
+                        <img class="ratio__item" src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg" alt=""/>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width:300px;">
+                    <h2>16/9 Ratio</h2>
+                    <div class="ratio ratio--16-9">
+                        <img class="ratio__item" src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg" alt=""/>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width:300px;">
+                    <h2>53% Ratio (news)</h2>
+                    <div class="ratio ratio--53">
+                        <img class="ratio__item" src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <div style="max-width: 2000px;">
+                <section style="display: inline-block; width:400px;">
+                    <h2>Video with ratio</h2>
+                    <div class="ratio">
+                        <video class="ratio__item" muted="" autoplay loop>
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </section>
+
+                <section style="display: inline-block; width:400px;">
+                    <h2>Video with ratio 16/9 ratio</h2>
+                    <div class="ratio ratio--16-9">
+                        <video class="ratio__item" muted="" autoplay loop>
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section style="max-width:2500px;" id="picture">
+            <section class="mb-3" style="display: inline-block; width:1000px;">
+                <h2>Picture with ratio</h2>
+                <div class="ratio">
+                    <picture>
+                        <source srcset="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=1000"
+                                media="(min-width: 1000px)">
+                        <source srcset="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=800"
+                                media="(min-width: 800px)">
+                        <img class="ratio__item" src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=600" alt="" />
+                    </picture>
+                </div>
+            </section>
+
+            <section class="mb-3" style="display: inline-block; width:1000px;">
+                <h2>Picture with ratio 16/9 ratio</h2>
+                <div class="ratio ratio--16-9">
+                    <picture>
+                        <source srcset="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=1000"
+                                media="(min-width: 1000px)">
+                        <source srcset="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=800"
+                                media="(min-width: 800px)">
+                        <img class="ratio__item" src="https://www.vaudoise.ch/images/default-source/tensid-cover-images/la-vaudoise-bonne-eleve-en-matiere-de-compatibilite-climatique-image-cover.jpg?size=600" alt="" />
+                    </picture>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

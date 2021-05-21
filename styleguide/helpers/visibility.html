@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styleguide Showroom</title>
+        <link rel="stylesheet" href="/styles/va.cms.css" />
+        <link rel="stylesheet" href="/styleguide/styleguide.css" />
+    </head>
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#base">Base</a></li>
+            <li><a href="#responsive-visibility">Responsive visibility</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>States</h1>
+        </section>
+
+        <section id="base">
+            <h1>Visibility</h1>
+
+            <h2>Display</h2>
+
+            An element could be forced to be displayed.</p>
+
+            <p><em>Demo</em>: <span class="is-shown">I'm forced to be displayed</span></p>
+            <code><pre>&#x3C;p class=&#x22;is-shown&#x22;&#x3E;I&#x27;m forced to be displayed&#x3C;/p&#x3E;</pre></code>
+
+            <h2>hidden</h2>
+
+            <p>An element could be forced to be hidden.</p>
+
+            <p><em>Demo</em>: <span class="is-hidden">I'm forced to be hidden</span></p>
+            <code><pre>&#x3C;p class=&#x22;is-hidden&#x22;&#x3E;I&#x27;m forced to be hidden&#x3C;/p&#x3E;</pre></code>
+
+            <h2>Invisibility</h2>
+
+            <p>An element could be forced to be invisible.</p>
+
+            <p><em>Demo</em>: <span class="is-invisible">I'm forced to be invisible</span></p>
+            <code><pre>&#x3C;p class=&#x22;is-invisible&#x22;&#x3E;I&#x27;m forced to be invisible&#x3C;/p&#x3E;</pre></code>
+        </section>
+
+        <section id="visibility">
+            <h1>Responsive visibility classes</h1>
+
+            <p>Those classes comes from bootstrap. full documentation is available <a href="https://getbootstrap.com/docs/4.5/utilities/display">there</a>.</a></p>
+
+            <em>Current width: <span id="width"></span></em>
+
+            <table class="table--responsive">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      Xtra small devices <small> (≥0px)</small>
+                    </th>
+                    <th>
+                      Small devices <small>Tablets (≥576px)</small>
+                    </th>
+                    <th>
+                      Medium devices <small>Desktops (≥768px)</small>
+                    </th>
+                    <th>
+                      Large devices <small>Desktops (≥992px)</small>
+                    </th>
+                    <th>
+                        Extra Large devices <small>Desktops (≥1200px)</small>
+                    </th>
+                    <th>
+                        Demo
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>.d-none .d-sm-block</code></th>
+                    <td>Hidden</td>
+                    <td>Visible</td>
+                    <td>Visible</td>
+                    <td>Visible</td>
+                    <td>Visible</td>
+                    <td><span class="d-none d-sm-block"><code>.d-none .d-sm-block</code></span></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><code>.d-none .d-sm-block .d-lg-none</code></th>
+                    <td>Hidden</td>
+                    <td>Visible</td>
+                    <td>Visible</td>
+                    <td>Hidden</td>
+                    <td>Hidden</td>
+                    <td><span class="d-none d-sm-block d-lg-none"><code>.d-none .d-sm-block .d-lg-none</code></span></td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row"><code>.d-block .d-md-none</code></th>
+                    <td>Visible</td>
+                    <td>Visible</td>
+                    <td>Hidden</td>
+                    <td>Hidden</td>
+                    <td>Hidden</td>
+                    <td><span class="d-block d-md-none"><code>.d-block .d-md-none</code></span></td>
+                  </tr>
+                </tbody>
+
+              </table>
+
+
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+
+    <script>
+      function reportWindowSize() {
+        const widthOutput = document.querySelector('#width');
+        widthOutput.textContent = window.innerWidth;
+      }
+      window.addEventListener('resize', reportWindowSize);
+
+      reportWindowSize();
+
+    </script>
+</body>
+
+</html>

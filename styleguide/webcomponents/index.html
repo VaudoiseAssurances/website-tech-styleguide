@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Webcomponents</h1>
+        <a href="/" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#va-mask">va-mask</a></li>
+            <li><a href="#va-datepicker">va-datepicker</a></li>
+            <li><a href="#va-stepper">va-stepper</a></li>
+            <li><a href="#va-alert">va-alert</a></li>
+            <li><a href="#va-flip">va-flip</a></li>
+            <li><a href="#va-modal">va-modal</a></li>
+            <li><a href="#va-nav-dropdown">va-nav-dropdown</a></li>
+            <li><a href="#accordion">va-accordion</a></li>
+            <li><a href="#va-slider">va-slider</a></li>
+            <li><a href="#tooltips">tooltips</a></li>
+            <li><a href="#slideshows">va-slideshow</a></li>
+            <li><a href="#videoplayer">va-video-player</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Webcomponents</h1>
+        </section>
+
+        <section id="va-mask">
+            <div class="form-group">
+                <label for="va-masked-field" class="form-label">Phone number</label>
+                <va-mask mask="+{41}(0)00 000-00-00">
+                    <input id="va-masked-field" class="form-control" type="text"/>
+                </va-mask>
+            </div>
+        </section>
+
+        <section id="va-datepicker">
+            <div class="form-group">
+                <label for="frm-el-datepicker1" class="form-label">A date from the datepicker</label>
+                <va-datepicker>
+                    <input type="date" name="test-datepicker" id="frm-el-datepicker1" class="form-control"
+                    data-val="true"
+                    data-val-required="Ce champ est requis."
+                    data-val-date="Le champ 'Date de naissance' n'est pas une date valide."
+                    data-val-datetimerangevalidation="Le champ 'Date de naissance' doit être compris entre 01.01.2020 et 15.07.2020."
+                    data-val-datetimerangevalidation-dateformat="dd.MM.yyyy"
+                    data-val-datetimerangevalidation-mindatetime="01.01.2020"
+                    data-val-datetimerangevalidation-maxdatetime="15.07.2020"
+                    placeholder="dd.mm.yyyy" />
+                </va-datepicker>
+            </div>
+        </section>
+
+        <section>
+            <h1 class="h2">va-stepper</h1>
+            <va-stepper id="stepper"
+                nav-items='[{"link": "#", "label": "Completé"}, {"link": "#", "label": "En cours"}, {"link": "#", "label": "Futur"}]'
+                current-item="1"></va-stepper>
+            <div>
+                <button type="button" id="btn-stepper-to-previous" class="btn btn--default btn--previous">Previous step</button>
+                <button type="button" id="btn-stepper-to-next" class="btn btn--default btn--next">Next step</button>
+                <div>stepper state from event: <span id="stepper-state">-</span></div>
+                <script>
+                    (function () {
+                        const stepper = document.getElementById('stepper');
+                        const stepperStateZone = document.getElementById('stepper-state');
+                        const btnPrevious = document.getElementById('btn-stepper-to-previous');
+                        const btnNext = document.getElementById('btn-stepper-to-next');
+                        stepper.addEventListener('change', function (evt) { stepperStateZone.innerText = JSON.stringify(evt.detail) });
+                        btnPrevious.addEventListener('click', function (evt) { stepper.goToPreviousStep(); });
+                        btnNext.addEventListener('click', function (evt) { stepper.goToNextStep(); });
+                    })();
+                </script>
+            </div>
+        </section>
+
+        <section id="va-alert">
+            <h1 class="h2">Alert notifications</h1>
+            <va-alert>This is a default alert!</va-alert>
+            <va-alert type="success">This is a success alert!</va-alert>
+            <va-alert type="error">This is an error alert!</va-alert>
+        </section>
+
+        <section id="va-flip">
+            <h1 class="h2">va-flip</h1>
+            <va-flip>
+                <div slot="recto">
+                    <h3>This is recto</h3>
+                    <h4>Click me to flip</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro quam ducimus natus eligendi
+                        repellat unde iusto inventore recusandae ab numquam.</p>
+                </div>
+                <div slot="verso">
+                    <h3>This is verso</h3>
+                    <h4>Click me to flip</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio illo ab incidunt provident vel
+                        aperiam, magni quia, placeat, similique quibusdam ratione! At autem incidunt quae ut culpa ad,
+                        aperiam, magni quia, placeat, similique quibusdam ratione! At autem incidunt quae ut culpa ad,
+                        assumenda, rem deserunt, nobis quas molestiae similique. Nulla natus vitae expedita omnis.</p>
+                </div>
+            </va-flip>
+
+            <script>
+                (function () {
+                    const flip = document.getElementsByTagName('va-flip')[0];
+                    flip.addEventListener('click', function (evt) {
+                        evt.currentTarget.flip();
+                    });
+                })();
+            </script>
+        </section>
+
+        <section id="va-modal">
+            <h1 class="h2">va-modal</h1>
+            <h4 class="h4">Default modal</h4>
+            <button type="button" class="btn btn--primary btn--sm" data-modal-target="example-modal">Open modal</button>
+            <va-modal id="example-modal" modalTitle="Modal title">
+                <section slot="content">
+                    <h3>This is the passed content</h3>
+                </section>
+                <footer slot="footer">
+                    <p>This is the passed footer</p>
+                </footer>
+            </va-modal>
+            <h4 class="h4">Modal with lightbox modifier and will close on backdrop click</h4>
+            <button type="button" class="btn btn--primary btn--sm" data-modal-target="example-modal-close-backdrop">Open
+                modal</button>
+            <va-modal id="example-modal-close-backdrop" closeOnBackdropClick cssClasses="modal--lightbox">
+                <section slot="content">
+                    <h3>This is the passed content</h3>
+                    <p>Click on the backdrop will also close the modal</p>
+                    <va-video-player source="http://techslides.com/demos/sample-videos/small.mp4" controls autoplay
+                        muted slot="content"></va-video-player>
+                </section>
+            </va-modal>
+        </section>
+
+        <section id="va-nav-dropdown">
+            <h1 class="h2">va-nav-dropdown</h1>
+            <div style="max-width: 300px;">
+                <va-nav-dropdown navlist='[{
+                    "label": "Assurance voiture blabla",
+                    "url": "https://www.vaudoise.ch",
+                    "isSelected": true
+                }, {
+                    "label": "Assurance Camping-car",
+                    "url": "https://www.example.org"
+                }, {
+                    "label": "Assurance Particulier",
+                    "url": "https://www.example.org"
+                }, {
+                    "label": "Assurance Responsabilité civile",
+                    "url": "https://www.example.org"
+                }]'></va-nav-dropdown>
+            </div>
+        </section>
+
+        <section id="accordion">
+            <h1 class="h2">Accordions</h1>
+
+            <div class="mb-5">
+                <pre id="va-accordion-info">(Expand accordion items to see event handling information)</pre>
+                <section>
+                    <va-accordion-item title="Pourquoi souscrire à l'assurance auto de la Vaudoise?" isExpanded>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et magna eget euismod.
+                        </p>
+                        <p>Duis lacinia molestie metus commodo faucibus. Phasellus varius id massa ac interdum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </va-accordion-item>
+                    <va-accordion-item title="Lorem ipsum dolor sit amet?">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et magna eget euismod.
+                            Aenean vitae nisl in tellus vulputate egestas eget sed risus. Praesent congue tellus id
+                            neque suscipit, ac rhoncus tellus cursus. Proin faucibus enim in orci mollis ultricies.
+                            Phasellus hendrerit lacus et scelerisque tincidunt. Nunc urna velit, vestibulum ut dictum
+                            eget, porttitor hendrerit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                            Aenean bibendum ex porttitor purus tincidunt, et tincidunt ante dapibus. Quisque ultrices
+                            pharetra lectus ut mollis. Integer convallis leo libero, a rutrum sapien placerat ac.</p>
+                        <p>Duis lacinia molestie metus commodo faucibus. Phasellus varius id massa ac interdum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nibh id lacus aliquet
+                            consequat. In hac habitasse platea dictumst. Duis tellus diam, semper in diam lacinia,
+                            ornare maximus nunc. Vestibulum id lacus ut risus sodales interdum et eget lorem. Donec arcu
+                            augue, interdum vel fringilla vel, porttitor et felis. Cras et elit elit. Nullam suscipit
+                            erat nulla, eu feugiat mi semper in. Sed vitae pulvinar urna. Proin placerat lectus pretium,
+                            feugiat diam ac, egestas augue. Nam id tortor eget mi tincidunt tristique vel id nisl.
+                            Aliquam non ultricies nibh. Phasellus dolor arcu, imperdiet eget nisi at, vehicula viverra
+                            libero. Pellentesque blandit egestas velit ac gravida.</p>
+                    </va-accordion-item>
+                    <va-accordion-item title="Phasellus varius id massa ac interdum?">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et magna eget euismod.
+                            Aenean vitae nisl in tellus vulputate egestas eget sed risus. Praesent congue tellus id
+                            neque suscipit, ac rhoncus tellus cursus. Proin faucibus enim in orci mollis ultricies.
+                            Phasellus hendrerit lacus et scelerisque tincidunt. Nunc urna velit, vestibulum ut dictum
+                            eget, porttitor hendrerit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                            Aenean bibendum ex porttitor purus tincidunt, et tincidunt ante dapibus. Quisque ultrices
+                            pharetra lectus ut mollis. Integer convallis leo libero, a rutrum sapien placerat ac.</p>
+                        <p>Duis lacinia molestie metus commodo faucibus. Phasellus varius id massa ac interdum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit nibh id lacus aliquet
+                            consequat. In hac habitasse platea dictumst. Duis tellus diam, semper in diam lacinia,
+                            ornare maximus nunc. Vestibulum id lacus ut risus sodales interdum et eget lorem. Donec arcu
+                            augue, interdum vel fringilla vel, porttitor et felis. Cras et elit elit. Nullam suscipit
+                            erat nulla, eu feugiat mi semper in. Sed vitae pulvinar urna. Proin placerat lectus pretium,
+                            feugiat diam ac, egestas augue. Nam id tortor eget mi tincidunt tristique vel id nisl.
+                            Aliquam non ultricies nibh. Phasellus dolor arcu, imperdiet eget nisi at, vehicula viverra
+                            libero. Pellentesque blandit egestas velit ac gravida.</p>
+                    </va-accordion-item>
+                </section>
+                <script>
+                    var accordions = document.querySelectorAll('va-accordion-item');
+                    for (var i = 0; i < accordions.length; i++) {
+                        var item = accordions[i];
+                        item.addEventListener("click", function (ev) {
+                            if (ev instanceof CustomEvent) {
+                                document.getElementById('va-accordion-info').innerHTML = JSON.stringify(ev.detail);
+                            }
+                        });
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section id="va-slider">
+            <h1 class="h2">va-slider</h1>
+            <pre id="va-slider-info">(Change slider value to see event handling information)</pre>
+            <va-slider id="va-slider-01" min="0" max="100" step="1" value="25"></va-slider>
+
+            <h3>A va-slider disabled</h3>
+            <va-slider id="va-slider-02" isDisabled="true" max="30" value="10"></va-slider>
+
+            <script>
+                document.addEventListener("va-slider-change", function (ev) { document.querySelector('#va-slider-info').innerHTML = JSON.stringify(ev.detail); });
+            </script>
+        </section>
+
+        <section id="tooltips">
+            <h1 class="h2">Tooltips</h1>
+
+            <div class="mb-5">
+                <input type="button" id="info02" value="Vaudoise tooltip - Hover me">
+                <va-tooltip for="info02"
+                    text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">
+                </va-tooltip>
+            </div>
+        </section>
+
+        <!-- <section id="slideshows">
+            <h2 class="h2">va-slideshow</h2>
+            <section>
+                <h3>Slideshow with default indicators</h3>
+                <va-slideshow effect="slide-right-to-left">
+                    <va-slideshow-text slot="slides" isActive>
+                        <div class="container">
+                            <h3>Slide 1 content</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat ex eros, maximus
+                                vulputate nibh luctus quis. Fusce eget aliquam metus, eu sodales sapien. Curabitur
+                                sagittis tellus eget mi rhoncus, vel lacinia nulla posuere. Nullam posuere et metus
+                                vitae suscipit. Curabitur pharetra dolor sagittis lorem mattis hendrerit. Pellentesque
+                                varius, nibh a elementum commodo, ex sapien venenatis nisl, ut pharetra sem tortor eget
+                                magna. Etiam elementum tristique felis, nec hendrerit diam aliquet sed. Fusce semper
+                                rhoncus sapien, ut malesuada nulla sagittis ac. Aenean ornare velit orci, eget ultricies
+                                nisi rhoncus vel. Nullam quis libero lacus. Quisque vulputate vitae sem vel condimentum.
+                                Donec felis magna, lacinia sit amet augue nec, elementum gravida lectus. Aliquam gravida
+                                diam nec urna imperdiet, sit amet vulputate ligula maximus. Nullam at rutrum eros.
+                                Aliquam eu leo a metus pulvinar accumsan. Nulla vel felis semper, iaculis risus at,
+                                sollicitudin purus.</p>
+                            <p>Donec nulla enim, faucibus eget felis eu, interdum vestibulum nulla. In nec pellentesque
+                                ante, nec tempus tortor. Phasellus tortor eros, pretium quis nisl ut, aliquet iaculis
+                                purus. Sed ornare varius sem ut porta. Donec venenatis odio id nisl suscipit tristique.
+                                Morbi vel molestie purus. Mauris dui purus, egestas imperdiet augue facilisis, consequat
+                                tempus nibh. Integer convallis facilisis tellus vel iaculis. Sed consectetur purus sit
+                                amet nibh pellentesque bibendum. Nulla vitae magna risus. Quisque et erat turpis. Morbi
+                                dictum tincidunt aliquet. Cras iaculis vitae dui at interdum. Sed non sagittis quam.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 2 content</h3>
+                            <p>Nunc sollicitudin sapien eget metus laoreet, eget bibendum orci interdum. Integer
+                                tincidunt nisi eget enim congue vulputate. Curabitur sed luctus mi. Sed at felis
+                                feugiat, euismod sem vel, tempor ipsum. Curabitur vehicula rhoncus erat id vulputate.
+                                Suspendisse et lorem eget turpis lobortis condimentum id nec turpis. Etiam tempus diam
+                                tortor, ut consectetur ex egestas vitae. Fusce vitae sollicitudin dolor, nec pretium
+                                tellus. Aliquam varius urna vitae magna vulputate, id pellentesque ligula auctor.</p>
+                            <p>Nam diam justo, viverra a odio sit amet, venenatis mattis sem. Sed neque arcu, dignissim
+                                sit amet mi quis, semper interdum lorem. Curabitur semper ligula tortor, a ultricies
+                                risus facilisis nec. Suspendisse luctus congue mauris, ac blandit libero commodo sed.
+                                Proin libero diam, maximus fermentum felis a, faucibus maximus turpis. Curabitur sed
+                                tincidunt neque, vitae volutpat mi. Vivamus a turpis at nisl cursus sollicitudin in vel
+                                odio. Aliquam efficitur sem massa, quis facilisis metus sagittis at. Nunc vel maximus
+                                magna. Duis dictum erat id neque volutpat pretium. Maecenas non augue tristique, varius
+                                lacus ut, feugiat sapien.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 3 content</h3>
+                            <p>Etiam in eros ligula. Pellentesque lobortis mattis risus, quis venenatis augue lacinia
+                                sed. Vivamus placerat maximus dui sit amet volutpat. Integer in pellentesque tortor, eu
+                                imperdiet enim. Donec placerat scelerisque mollis. Proin aliquet eu sapien id vehicula.
+                                Praesent viverra lacus ipsum, in gravida sem consequat eu. Sed finibus vulputate neque,
+                                eleifend scelerisque est tristique sed. Vestibulum blandit purus quam, pellentesque
+                                cursus tellus volutpat sit amet. Pellentesque sit amet eros sed nunc placerat dapibus
+                                sed et est. Fusce sed posuere ipsum.</p>
+                            <p>Fusce dictum, quam a aliquet interdum, ex enim ultricies justo, id elementum ante elit a
+                                justo. Vivamus efficitur interdum dolor vel ultricies. Duis sit amet aliquam sem.
+                                Vestibulum vitae odio gravida, cursus enim vel, efficitur nunc. Duis posuere orci quis
+                                leo mollis, vel dapibus augue feugiat. Duis id mauris a mauris finibus tempus.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas. Quisque ullamcorper venenatis dolor, in porta neque ornare eget.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-indicator slot="indicators" isActive></va-slideshow-indicator>
+                    <va-slideshow-indicator slot="indicators"></va-slideshow-indicator>
+                    <va-slideshow-indicator slot="indicators"></va-slideshow-indicator>
+                </va-slideshow>
+            </section>
+            <hr>
+            <section>
+                <h3>Slideshow with vertical indicators</h3>
+                <va-slideshow layout="vertical-indicators" indicatorsLayout="vertical">
+                    <va-slideshow-text slot="slides" isActive>
+                        <div class="container">
+                            <h3>Slide 1 content</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate lacus id rutrum
+                                ullamcorper. In massa orci, pellentesque eu libero vitae, posuere suscipit augue. Nullam
+                                at porttitor sem. Cras condimentum urna in quam consectetur facilisis. Duis iaculis
+                                suscipit mi, a cursus purus tristique placerat. Aenean elementum odio id ligula molestie
+                                cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus efficitur
+                                quam in tincidunt malesuada. Donec id posuere mauris. Proin dapibus bibendum lectus,
+                                egestas ullamcorper erat scelerisque non.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 2 content</h3>
+                            <p>Nunc sollicitudin sapien eget metus laoreet, eget bibendum orci interdum. Integer
+                                tincidunt nisi eget enim congue vulputate. Curabitur sed luctus mi. Sed at felis
+                                feugiat, euismod sem vel, tempor ipsum. Curabitur vehicula rhoncus erat id vulputate.
+                                Suspendisse et lorem eget turpis lobortis condimentum id nec turpis. Etiam tempus diam
+                                tortor, ut consectetur ex egestas vitae. Fusce vitae sollicitudin dolor, nec pretium
+                                tellus. Aliquam varius urna vitae magna vulputate, id pellentesque ligula auctor.</p>
+                            <p>Nam diam justo, viverra a odio sit amet, venenatis mattis sem. Sed neque arcu, dignissim
+                                sit amet mi quis, semper interdum lorem. Curabitur semper ligula tortor, a ultricies
+                                risus facilisis nec. Suspendisse luctus congue mauris, ac blandit libero commodo sed.
+                                Proin libero diam, maximus fermentum felis a, faucibus maximus turpis. Curabitur sed
+                                tincidunt neque, vitae volutpat mi. Vivamus a turpis at nisl cursus sollicitudin in vel
+                                odio. Aliquam efficitur sem massa, quis facilisis metus sagittis at. Nunc vel maximus
+                                magna. Duis dictum erat id neque volutpat pretium. Maecenas non augue tristique, varius
+                                lacus ut, feugiat sapien.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 3 content</h3>
+                            <p>Etiam in eros ligula. Pellentesque lobortis mattis risus, quis venenatis augue lacinia
+                                sed. Vivamus placerat maximus dui sit amet volutpat. Integer in pellentesque tortor, eu
+                                imperdiet enim. Donec placerat scelerisque mollis. Proin aliquet eu sapien id vehicula.
+                                Praesent viverra lacus ipsum, in gravida sem consequat eu. Sed finibus vulputate neque,
+                                eleifend scelerisque est tristique sed. Vestibulum blandit purus quam, pellentesque
+                                cursus tellus volutpat sit amet. Pellentesque sit amet eros sed nunc placerat dapibus
+                                sed et est. Fusce sed posuere ipsum.</p>
+                            <p>Fusce dictum, quam a aliquet interdum, ex enim ultricies justo, id elementum ante elit a
+                                justo. Vivamus efficitur interdum dolor vel ultricies. Duis sit amet aliquam sem.
+                                Vestibulum vitae odio gravida, cursus enim vel, efficitur nunc. Duis posuere orci quis
+                                leo mollis, vel dapibus augue feugiat. Duis id mauris a mauris finibus tempus.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas. Quisque ullamcorper venenatis dolor, in porta neque ornare eget.</p>
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text-indicator text="Slide 1" slot="indicators" isActive>
+                    </va-slideshow-text-indicator>
+                    <va-slideshow-text-indicator text="Slide 2" slot="indicators"></va-slideshow-text-indicator>
+                    <va-slideshow-text-indicator text="Slide 3" slot="indicators"></va-slideshow-text-indicator>
+                </va-slideshow>
+            </section>
+            <hr>
+            <section>
+                <h3>Slideshow with thumbnail indicators</h3>
+                <va-slideshow layout="overlay-indicators" indicatorsLayout="right">
+                    <va-slideshow-text slot="slides" isActive>
+                        <div class="container">
+                            <h3>Slide 1 content</h3>
+                            <img src="https://fakeimg.pl/1200x400/5d5b70/">
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 2 content</h3>
+                            <img src="https://fakeimg.pl/1200x400/3f3a6e/">
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-text slot="slides">
+                        <div class="container">
+                            <h3>Slide 3 content</h3>
+                            <img src="https://fakeimg.pl/1200x400/1a1836/">
+                        </div>
+                    </va-slideshow-text>
+                    <va-slideshow-thumbnail text="Slide 1" imageSource="https://fakeimg.pl/250x200/" slot="indicators"
+                        isActive></va-slideshow-thumbnail>
+                    <va-slideshow-thumbnail text="Slide 2" imageSource="https://fakeimg.pl/250x200/" slot="indicators">
+                    </va-slideshow-thumbnail>
+                    <va-slideshow-thumbnail text="Slide 3" imageSource="https://fakeimg.pl/250x200/" slot="indicators">
+                    </va-slideshow-thumbnail>
+                </va-slideshow>
+            </section>
+        </section> -->
+        <section id="videoplayer">
+            <h1 class="h2">Video player</h1>
+            <va-video-player source="http://techslides.com/demos/sample-videos/small.mp4" controls autoplay muted>
+            </va-video-player>
+        </section>
+    </main>
+    <script src="../../src/node_modules/googlemaps-js-api-stub/stub.js"></script>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>

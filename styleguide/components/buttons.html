@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleguide Showroom</title>
+    <link rel="stylesheet" href="/styles/va.cms.css" />
+    <link rel="stylesheet" href="/styleguide/styleguide.css" />
+</head>
+
+<body>
+    <aside class="styleguide-nav">
+        <h1>Categories</h1>
+        <a href="/index.html" class="link--primary">Back home</a>
+        <ul>
+            <li><a href="#base">Base</a></li>
+            <li><a href="#section-loading-button">Loading button</a></li>
+            <li><a href="#decorations">Button's decorations</a></li>
+        </ul>
+    </aside>
+    <main class="styleguide-content">
+        <section>
+            <h1>Buttons</h1>
+        </section>
+
+        <section id="base">
+            <h1 class="h2">Buttons</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="h3">On white background</h2>
+                    <div style="background-color: white; padding: 10px;">
+                        <button class="btn">button without modifier</button><br /> <br />
+                        <button class="btn btn--primary">A primary btn</button><br /><br />
+                        <button class="btn btn--secondary">A secondary btn</button><br /><br />
+                        <button class="btn btn--tertiary">A tertiary btn</button><br /><br />
+                        <button class="btn btn--default">A default btn</button><br /><br />
+                        <a href="#" class="btn btn--primary">A link with a btn class</a><br /><br />
+                        <button class="btn btn--sm">A small button</button><br /><br />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="h3">On colored background</h2>
+                    <div style="background-color: grey; padding: 10px;">
+                        <button class="btn">button without modifier</button><br /> <br />
+                        <button class="btn btn--primary">A primary btn</button><br /><br />
+                        <button class="btn btn--secondary">A secondary btn</button><br /><br />
+                        <button class="btn btn--tertiary">A tertiary btn</button><br /><br />
+                        <button class="btn btn--default">A default btn</button><br /><br />
+                        <a href="#" class="btn btn--primary">A link with a btn class</a><br /><br />
+                        <button class="btn btn--sm">A small button</button><br /><br />
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section id="section-loading-button">
+            <h1 class="h2">va-loading-button</h1>
+            <va-button id="loading-button" btn-class="btn btn--primary" type="button" text="Click to load" manual-state
+                is-loading></va-button>
+            <button id="reset-loading-state">Reset loading state</button>
+            <script>
+                (function () {
+                    const loadingButton = document.getElementById('loading-button');
+                    loadingButton.addEventListener('click', function (evt) {
+                        loadingButton.toggleLoadingState();
+                        console.log(evt);
+                    });
+
+                    const resetButton = document.getElementById('reset-loading-state');
+                    resetButton.addEventListener('click', function (evt) {
+                        loadingButton.toggleLoadingState(false);
+                    });
+                })();
+            </script>
+        </section>
+
+        <section id="decorations">
+            <h1 class="h2">Buttons decorations</h1>
+            <button class="btn btn--primary with-arrow">Standard action button</button><br class="mt-2" />
+            <div class="mt-2">
+                <button class="btn btn--default btn--previous">Return button</button>
+                <button class="btn btn--primary btn--next">Next button</button>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/va.cms.bundle.js"></script>
+</body>
+
+</html>
